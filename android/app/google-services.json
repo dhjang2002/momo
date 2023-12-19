@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "924568130844",
+    "project_id": "moim-20211231",
+    "storage_bucket": "moim-20211231.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924568130844:android:a76cff17babd2334f4d6d9",
+        "android_client_info": {
+          "package_name": "com.smdt.moims"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924568130844-tm3tdps4m4r4ih8o2aau4pu6dv9t67cb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtOQ9lIOOqqWf7Stcu37vZNtVQchD0O64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924568130844-tm3tdps4m4r4ih8o2aau4pu6dv9t67cb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "924568130844-f9ddla45jdjrn49nesec5n32bk3hfjvh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.smdt.momo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
