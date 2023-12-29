@@ -137,9 +137,9 @@ Widget simpleBlurImage(String url, double aspectRatio) {
       child: (url.isNotEmpty)
           ? OctoImage(
               image: NetworkImage(url),
-              placeholderBuilder: OctoPlaceholder.blurHash(
-                'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
-              ),
+              // placeholderBuilder: OctoPlaceholder.b(
+              //   'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
+              // ),
               errorBuilder: (context, error, stacktrace) => Image.asset(
                   "assets/icon/icon_empty_person.png",
                   fit: BoxFit.fill),
@@ -160,9 +160,9 @@ Widget simpleBlurImageWithName(String value, double fontSize, String url, double
       child: (url.isNotEmpty)
           ? OctoImage(
         image: NetworkImage(url),
-        placeholderBuilder: OctoPlaceholder.blurHash(
-          'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
-        ),
+        // placeholderBuilder: OctoPlaceholder.blurHash(
+        //   'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
+        // ),
         errorBuilder: (context, error, stacktrace) => Image.asset(
             "assets/icon/icon_empty_person.png",
             fit: BoxFit.fill),

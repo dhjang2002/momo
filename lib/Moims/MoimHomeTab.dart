@@ -1,10 +1,12 @@
 // ignore_for_file: unnecessary_const, non_constant_identifier_names, avoid_print
 
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+//import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:momo/Controller/ColtrollerStatusChange.dart';
 import 'package:momo/Members/MemberApprove.dart';
+import 'package:momo/Members/MemberEditPage.dart';
 import 'package:momo/Members/MemberHome.dart';
 import 'package:momo/Models/MemberInfo.dart';
 import 'package:momo/Models/MoimInfo.dart';
@@ -27,7 +29,7 @@ import 'package:momo/Utils/Launcher.dart';
 import 'package:momo/Utils/SearchHome.dart';
 import 'package:momo/Utils/utils.dart';
 import 'package:momo/Webview/WebExplorer.dart';
-import 'package:momo/contacts/contactMain.dart';
+//import 'package:momo/contacts/contactMain.dart';
 import 'package:provider/provider.dart';
 import 'package:transition/transition.dart';
 
@@ -46,7 +48,7 @@ class _MoimHomeTabState extends State<MoimHomeTab>
     with SingleTickerProviderStateMixin {
 
   final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
-  final GlobalKey<FabCircularMenuState> _fabKey = GlobalKey();
+  final GlobalKey<FabCircularMenuPlusState> _fabKey = GlobalKey();
 
   int _currTabIndex = 0;
   late Moims _moim;
@@ -174,7 +176,7 @@ class _MoimHomeTabState extends State<MoimHomeTab>
 
   Widget _renderFabCircularButton(){
     if(_currTabIndex == 1 ) {
-      return FabCircularMenu(
+      return FabCircularMenuPlus(
         key: _fabKey,
         alignment: Alignment.bottomRight,
         ringColor: Colors.grey.withAlpha(15),
@@ -243,71 +245,71 @@ class _MoimHomeTabState extends State<MoimHomeTab>
         ],
       );
     }
-    if(_currTabIndex == 4 ) {
-      return FabCircularMenu(
-        key: _fabKey,
-        alignment: Alignment.bottomRight,
-        ringColor: Colors.grey.withAlpha(15),
-        ringDiameter: 300.0,
-        ringWidth: 100.0,
-        fabSize: 56.0,
-        fabElevation: 8.0,
-        fabIconBorder: const CircleBorder(),
-        // Also can use specific color based on wether
-        // the menu is open or not:
-        // fabOpenColor: Colors.white
-        // fabCloseColor: Colors.white
-        // These properties take precedence over fabColor
-        fabColor: Colors.redAccent,
-        fabOpenIcon: const Icon(
-            Icons.add, size: 32, color: Colors.white),
-        fabCloseIcon: const Icon(
-            Icons.arrow_drop_down, size: 32, color: Colors.white),
-        fabMargin: const EdgeInsets.all(15.0),
-        animationDuration: const Duration(milliseconds: 300),
-        animationCurve: Curves.easeInOutCirc,
-        onDisplayChange: (isOpen) {},
-        children: <Widget>[
-          RawMaterialButton(
-            shape: const CircleBorder(),
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(
-                "assets/icon/member_ring_user_list.png", width: 44,
-                height: 44,
-                color: Colors.white),
-            fillColor: Colors.orangeAccent,
-            onPressed: () async {
-              _fabKey.currentState!.close();
-              // if (!_isListMode) {
-              //   setState(() {
-              //     _isListMode = true;
-              //   });
-              //   await Future.delayed(const Duration(milliseconds: 50));
-              //   _pageController[1].Invalidate();
-              // }
-            },
-          ),
-          RawMaterialButton(
-            shape: const CircleBorder(),
-            padding: const EdgeInsets.all(8.0),
-            fillColor: Colors.green,
-            child: Image.asset("assets/icon/member_ring_users.png", width: 44,
-                height: 44,
-                color: Colors.white),
-            onPressed: () async {
-              _fabKey.currentState!.close();
-              // if (_isListMode) {
-              //   setState(() {
-              //     _isListMode = false;
-              //   });
-              //   await Future.delayed(const Duration(milliseconds: 50));
-              //   _pageController[1].Invalidate();
-              // }
-            },
-          ),
-        ],
-      );
-    }
+    // if(_currTabIndex == 4 ) {
+    //   return FabCircularMenuPlus(
+    //     key: _fabKey,
+    //     alignment: Alignment.bottomRight,
+    //     ringColor: Colors.grey.withAlpha(15),
+    //     ringDiameter: 300.0,
+    //     ringWidth: 100.0,
+    //     fabSize: 56.0,
+    //     fabElevation: 8.0,
+    //     fabIconBorder: const CircleBorder(),
+    //     // Also can use specific color based on wether
+    //     // the menu is open or not:
+    //     // fabOpenColor: Colors.white
+    //     // fabCloseColor: Colors.white
+    //     // These properties take precedence over fabColor
+    //     fabColor: Colors.redAccent,
+    //     fabOpenIcon: const Icon(
+    //         Icons.add, size: 32, color: Colors.white),
+    //     fabCloseIcon: const Icon(
+    //         Icons.arrow_drop_down, size: 32, color: Colors.white),
+    //     fabMargin: const EdgeInsets.all(15.0),
+    //     animationDuration: const Duration(milliseconds: 300),
+    //     animationCurve: Curves.easeInOutCirc,
+    //     onDisplayChange: (isOpen) {},
+    //     children: <Widget>[
+    //       RawMaterialButton(
+    //         shape: const CircleBorder(),
+    //         padding: const EdgeInsets.all(8.0),
+    //         child: Image.asset(
+    //             "assets/icon/member_ring_user_list.png", width: 44,
+    //             height: 44,
+    //             color: Colors.white),
+    //         fillColor: Colors.orangeAccent,
+    //         onPressed: () async {
+    //           _fabKey.currentState!.close();
+    //           // if (!_isListMode) {
+    //           //   setState(() {
+    //           //     _isListMode = true;
+    //           //   });
+    //           //   await Future.delayed(const Duration(milliseconds: 50));
+    //           //   _pageController[1].Invalidate();
+    //           // }
+    //         },
+    //       ),
+    //       RawMaterialButton(
+    //         shape: const CircleBorder(),
+    //         padding: const EdgeInsets.all(8.0),
+    //         fillColor: Colors.green,
+    //         child: Image.asset("assets/icon/member_ring_users.png", width: 44,
+    //             height: 44,
+    //             color: Colors.white),
+    //         onPressed: () async {
+    //           _fabKey.currentState!.close();
+    //           // if (_isListMode) {
+    //           //   setState(() {
+    //           //     _isListMode = false;
+    //           //   });
+    //           //   await Future.delayed(const Duration(milliseconds: 50));
+    //           //   _pageController[1].Invalidate();
+    //           // }
+    //         },
+    //       ),
+    //     ],
+    //   );
+    // }
     return Container();
   }
 
@@ -421,17 +423,17 @@ class _MoimHomeTabState extends State<MoimHomeTab>
         ),
 
         // 4: 인맥관리
-        Container(),
-        // MemberEditPage(
-        //   controller: _pageController[4],
-        //   isMember: true,
-        //   moimsId: widget.moims_id,
-        //   onUpdate: (bool result) {
-        //     if (result) {
-        //       _loadMemberInfo();
-        //     }
-        //   },
-        // ),
+        //Container(),
+        MemberEditPage(
+          controller: _pageController[4],
+          isMember: true,
+          moimsId: widget.moims_id,
+          onUpdate: (bool result) {
+            if (result) {
+              _loadMemberInfo();
+            }
+          },
+        ),
       ],
     );
   }
@@ -760,10 +762,6 @@ class _MoimHomeTabState extends State<MoimHomeTab>
           _fabKey.currentState!.close();
         }
 
-        if (index == 4) {
-          _onContact();
-          return;
-        }
 
         _pageController[_currTabIndex].goBack();
         //_pageController[index].goFront();
@@ -813,7 +811,7 @@ class _MoimHomeTabState extends State<MoimHomeTab>
               color: (_currTabIndex == 3) ? Colors.green : Colors.black,
             )),
         BottomNavigationBarItem(
-            label: '인맥관리',
+            label: '내정보',
             icon: Image.asset(
               "assets/icon/moim_bot_user.png",
               width: (_currTabIndex == 4) ? 28 : 28,
@@ -1146,12 +1144,12 @@ class _MoimHomeTabState extends State<MoimHomeTab>
   }
 
   Future <void> _onContact() async {
-    var result = await Navigator.push(
-      context,
-      Transition(
-          child: ContactMain(usersId: _loginInfo.person!.mb_no!),
-          transitionEffect: TransitionEffect.RIGHT_TO_LEFT),
-    );
+    // var result = await Navigator.push(
+    //   context,
+    //   Transition(
+    //       child: ContactMain(usersId: _loginInfo.person!.mb_no!),
+    //       transitionEffect: TransitionEffect.RIGHT_TO_LEFT),
+    // );
   }
 
 }

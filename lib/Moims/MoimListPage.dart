@@ -86,6 +86,7 @@ class _MoimListPageState extends State<MoimListPage> with AutomaticKeepAliveClie
           }
 
           case ControllerStatusChange.aSearch:
+
               break;
         }
       });

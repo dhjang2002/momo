@@ -2,7 +2,8 @@
 
 import 'dart:async';
 
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+//import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:momo/Layouts/TileCard.dart';
@@ -38,7 +39,7 @@ class ShopHome extends StatefulWidget {
 }
 
 class _ShopHomeState extends State<ShopHome> {
-  final GlobalKey<FabCircularMenuState> _fabKey = GlobalKey();
+  final GlobalKey<FabCircularMenuPlusState> _fabKey = GlobalKey();
   final PageController _pageController = PageController(initialPage: 0,);
   final _valueNotifier = ValueNotifier<int>(0);
 
@@ -199,7 +200,7 @@ class _ShopHomeState extends State<ShopHome> {
 
   Widget _renderFabCircularButton(){
     //final primaryColor = Theme.of(context).primaryColor;
-    return FabCircularMenu(
+    return FabCircularMenuPlus(
      key: _fabKey,
       alignment: Alignment.bottomRight,
       ringColor: Colors.grey.withAlpha(15),

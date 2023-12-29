@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_const, non_constant_identifier_names, avoid_print
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:fab_circular_menu_plus/fab_circular_menu_plus.dart';
+//import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:momo/Intro/intro_screen_page.dart';
@@ -50,7 +51,7 @@ class _MainHomeTabState extends State<MainHomeTab>
     with SingleTickerProviderStateMixin {
 
   final GlobalKey<ScaffoldState> _scaffoldStateKey = GlobalKey();
-  final GlobalKey<FabCircularMenuState> _fabKey = GlobalKey();
+  final GlobalKey<FabCircularMenuPlusState> _fabKey = GlobalKey();
   final RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   late final List<ControllerStatusChange> _pageController;
@@ -313,10 +314,10 @@ class _MainHomeTabState extends State<MainHomeTab>
           return;
         }
 
-        if (index == 4) {
-          _onContact();
-          return;
-        }
+        // if (index == 4) {
+        //   _onContact();
+        //   return;
+        // }
 
         checkNotice();
 
@@ -368,7 +369,7 @@ class _MainHomeTabState extends State<MainHomeTab>
               color: (_currTabIndex == 3) ? Colors.green : Colors.black,
             )),
         BottomNavigationBarItem(
-            label: '인맥관리',
+            label: '내정보',
             icon: Image.asset("assets/icon/main_bot_user.png",
               width: (_currTabIndex == 4) ? 28 : 28,
               height: (_currTabIndex == 4) ? 28 : 28,
@@ -511,21 +512,21 @@ class _MainHomeTabState extends State<MainHomeTab>
           ),
 
           // 4: 인맥관리
-          Container(),
-          // MemberEditPage(
-          //   controller: _pageController[4],
-          //   moimsId: "",
-          //   isMember: false,
-          //   onUpdate: (bool result) {
-          //     if (result) {
-          //       //_fetchPerson();
-          //       setState(() {
-          //
-          //       });
-          //       // 기본정보 reload!
-          //     }
-          //   },
-          // ),
+          //Container(),
+          MemberEditPage(
+            controller: _pageController[4],
+            moimsId: "",
+            isMember: false,
+            onUpdate: (bool result) {
+              if (result) {
+                //_fetchPerson();
+                setState(() {
+
+                });
+                // 기본정보 reload!
+              }
+            },
+          ),
         ],
       );
   }
